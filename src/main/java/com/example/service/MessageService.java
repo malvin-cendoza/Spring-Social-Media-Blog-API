@@ -63,7 +63,7 @@ public class MessageService {
     public Optional<Message> getMessageById(Integer id) {
         return messageRepository.findById(id);
     }
-
+    
     /**
      * Deletes a message by its ID.
      * Returns 1 if a message was deleted, or 0 if it didn't exist.
