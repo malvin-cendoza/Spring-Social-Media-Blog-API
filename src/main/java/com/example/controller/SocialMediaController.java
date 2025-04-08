@@ -35,8 +35,8 @@ public class SocialMediaController {
 
     /**
      * Endpoint to register a new user account.
-     * @param account JSON body representing a new account (without accountId)
-     * @return 200 OK with the new account, 409 if username already exists, or 400 if input is invalid
+     * @param account JSON body representing a new account (without accountId).
+     * @return 200 OK with the new account, 409 if username already exists, or 400 if input is invalid.
      */
     @PostMapping("/register")
     public ResponseEntity<Account> register(@RequestBody Account account) {
@@ -53,8 +53,8 @@ public class SocialMediaController {
 
     /**
      * Endpoint to authenticate a user.
-     * @param account JSON body containing username and password
-     * @return 200 OK with the account if login is successful, 401 Unauthorized if not
+     * @param account JSON body containing username and password.
+     * @return 200 OK with the account if login is successful, 401 Unauthorized if not.
      */
     @PostMapping("/login")
     public ResponseEntity<Account> login(@RequestBody Account account) {
@@ -69,8 +69,8 @@ public class SocialMediaController {
 
     /**
      * Endpoint to create a new message.
-     * @param message JSON body containing postedBy, messageText, and timePostedEpoch
-     * @return 200 OK with the new message if successful, 400 if input is invalid
+     * @param message JSON body containing postedBy, messageText, and timePostedEpoch.
+     * @return 200 OK with the new message if successful, 400 if input is invalid.
      */
     @PostMapping("/messages")
     public ResponseEntity<Message> createMessage(@RequestBody Message message) {
@@ -85,7 +85,7 @@ public class SocialMediaController {
 
     /**
      * Endpoint to retrieve all messages.
-     * @return A list of all messages in the database (200 OK always, even if empty)
+     * @return A list of all messages in the database (200 OK always, even if empty).
      */
     @GetMapping("/messages")
     public List<Message> getAllMessages() {
@@ -94,8 +94,8 @@ public class SocialMediaController {
 
     /**
      * Endpoint to retrieve a single message by its ID.
-     * @param messageId The ID of the message
-     * @return 200 OK with the message if found, otherwise an empty 200 OK response
+     * @param messageId The ID of the message.
+     * @return 200 OK with the message if found, otherwise an empty 200 OK response.
      */
     @GetMapping("/messages/{messageId}")
     public ResponseEntity<Message> getMessageById(@PathVariable Integer messageId) {
@@ -106,8 +106,8 @@ public class SocialMediaController {
 
     /**
      * Endpoint to delete a message by ID.
-     * @param messageId The ID of the message
-     * @return 200 OK with 1 if deleted, or empty 200 OK if message did not exist
+     * @param messageId The ID of the message.
+     * @return 200 OK with 1 if deleted, or empty 200 OK if message did not exist.
      */
     @DeleteMapping("/messages/{messageId}")
     public ResponseEntity<Integer> deleteMessageById(@PathVariable Integer messageId) {
@@ -122,9 +122,9 @@ public class SocialMediaController {
 
     /**
      * Endpoint to update the text of a message.
-     * @param messageId The ID of the message to update
-     * @param updated A JSON object containing only the new messageText
-     * @return 200 OK with 1 if updated, 400 if update failed
+     * @param messageId The ID of the message to update.
+     * @param updated A JSON object containing only the new messageText.
+     * @return 200 OK with 1 if updated, 400 if update failed.
      */
     @PatchMapping("/messages/{messageId}")
     public ResponseEntity<Integer> updateMessageText(@PathVariable Integer messageId, @RequestBody Message updated) {
@@ -139,8 +139,8 @@ public class SocialMediaController {
 
     /**
      * Endpoint to get all messages posted by a specific user.
-     * @param accountId The ID of the account
-     * @return A list of messages posted by the user (empty list if none exist)
+     * @param accountId The ID of the account.
+     * @return A list of messages posted by the user (empty list if none exist).
      */
     @GetMapping("/accounts/{accountId}/messages")
     public List<Message> getMessagesByUser(@PathVariable Integer accountId) {
