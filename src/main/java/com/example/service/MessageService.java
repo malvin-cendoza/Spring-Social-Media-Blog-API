@@ -103,4 +103,3 @@ public class MessageService {
         return messageRepository.findByPostedBy(userId);
     }   
 }
-//test to commit
