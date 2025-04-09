@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 /**
- * Service layer responsible for business logic related to user accounts.
+ * Service layer responsible for business logic related to user accounts. 
  */
 @Service
 public class AccountService {
