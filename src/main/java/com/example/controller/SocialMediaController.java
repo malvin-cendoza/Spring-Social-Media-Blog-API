@@ -20,7 +20,6 @@ import java.util.Optional;
 /**
  * Controller class that handles all incoming HTTP requests related to user accounts and messages.
  * Defines REST API endpoints for registration, login, message creation, message retrieval, update, and deletion.
- * ..
  */
 @RestController
 public class SocialMediaController {
