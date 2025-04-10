@@ -36,7 +36,7 @@ public class SocialMediaController {
     /**
      * Endpoint to register a new user account.
      * @param account JSON body representing a new account (without accountId).
-     * @return 200 OK with the new account, 409 if username already exists, or 400 if input is invalid.
+     * @return 200 OK with the new account, 409 if username already exists, or 400 if input is invalid. 
      */
     @PostMapping("/register")
     public ResponseEntity<Account> register(@RequestBody Account account) {
